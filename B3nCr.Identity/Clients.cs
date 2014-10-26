@@ -15,13 +15,13 @@ namespace B3nCr.Identity
             new Client 
             {
                 Enabled = true,
-                ClientName = "MVC Client",
-                ClientId = "mvc",
+                ClientName = "GrpTxt",
+                ClientId = "grptxt",
                 Flow = Flows.Hybrid,
 
                 RedirectUris = new List<Uri>
                 {
-                    new Uri("https://localhost:44319/")
+                    new Uri("https://b3ncr.comms:44341/")
                 }
             }
         };

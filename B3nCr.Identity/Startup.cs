@@ -15,8 +15,8 @@ namespace B3nCr.Identity
             {
                 idsrvApp.UseIdentityServer(new IdentityServerOptions
                 {
-                    SiteName = "Embedded IdentityServer",
-                    IssuerUri = "https://idsrv3/embedded",
+                    SiteName = "B3nCr Identity Server",
+                    IssuerUri = "https://b3ncr.auth/embedded",
                     SigningCertificate = LoadCertificate(),
 
                     Factory = InMemoryFactory.Create(
@@ -29,8 +29,13 @@ namespace B3nCr.Identity
 
         X509Certificate2 LoadCertificate()
         {
-            return new X509Certificate2(
-                string.Format(@"{0}\bin\TestIdent.pfx", AppDomain.CurrentDomain.BaseDirectory), "B3nCrB0ilingAFr0g");
+            var store = new X509Store(StoreName.My, StoreLocation.LocalMachine);
+            
+            store.Open(OpenFlags.ReadOnly);
+
+            var certCollection = store.Certificates.Find(X509FindType.FindByThumbprint, "D0AFE6C9CF53CFFA5EEDE83A310EA06B31954015", false);
+
+            return new X509Certificate2(certCollection[0]);
         }
     }
 }

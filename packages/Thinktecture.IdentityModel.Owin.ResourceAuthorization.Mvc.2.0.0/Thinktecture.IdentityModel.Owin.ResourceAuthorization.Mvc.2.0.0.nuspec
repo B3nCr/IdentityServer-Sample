@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Thinktecture.IdentityModel.Owin.ResourceAuthorization.Mvc</id>
+    <version>2.0.0</version>
+    <title>Thinktecture.IdentityModel.Owin - Resource Authorization for ASP.NET MVC</title>
+    <authors>Dominick Baier, Brock Allen</authors>
+    <owners>Dominick Baier, Brock Allen</owners>
+    <projectUrl>https://github.com/thinktecture</projectUrl>
+    <iconUrl>http://1.gravatar.com/blavatar/3b437c799e12e32beb1d8cfda1199ab3?s=32</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>MVC intgration package for resource/action based authorization.</description>
+    <summary>MVC intgration package for resource/action based authorization.</summary>
+    <copyright>Dominick Baier, Brock Allen 2014</copyright>
+    <language>en-US</language>
+    <tags>Security OWIN Katana Identity Claims Authentication Authorization Access Control WebAPI Web API MVC</tags>
+    <dependencies>
+      <dependency id="Thinktecture.IdentityModel.Owin.ResourceAuthorization" version="1.0.1" />
+      <dependency id="Microsoft.AspNet.Mvc" version="5.2.2" />
+      <dependency id="Thinktecture.IdentityModel.Core" version="1.2.0" />
+    </dependencies>
+  </metadata>
+</package>
