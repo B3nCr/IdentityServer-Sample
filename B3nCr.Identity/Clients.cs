@@ -10,9 +10,7 @@ namespace B3nCr.Identity
     {
         public static IEnumerable<Client> Get()
         {
-            return new[]
-        {
-            new Client 
+            var mvcClient = new Client
             {
                 Enabled = true,
                 ClientName = "GrpTxt",
@@ -23,8 +21,16 @@ namespace B3nCr.Identity
                 {
                     new Uri("https://b3ncr.comms:44341/")
                 }
-            }
-        };
+            };
+            var angularClient = new Client
+            {
+                Enabled = true,
+                ClientName = "txtm8",
+                ClientId = "txtm8",
+                Flow = Flows.Hybrid,
+                RedirectUris = new List<Uri> {  new Uri("https://b3ncr.comms:44341/#/loggedin?")}
+            };
+            return new List<Client> { mvcClient, angularClient };
         }
     }
 }

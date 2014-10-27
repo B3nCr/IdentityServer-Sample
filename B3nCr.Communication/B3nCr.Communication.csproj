@@ -176,6 +176,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MochaController.cs" />
     <Compile Include="Controllers\SecuredController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -187,10 +188,28 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\app.css" />
+    <Content Include="App\app.js" />
+    <Content Include="App\Auth\AuthenticationApp.js" />
+    <Content Include="App\Auth\LoggedIn.html" />
+    <Content Include="App\Auth\Register.html" />
+    <Content Include="App\Auth\LoginController.js" />
+    <Content Include="App\Auth\RegistrationController.js" />
+    <Content Include="App\components\version\interpolate-filter.js" />
+    <Content Include="App\components\version\interpolate-filter_test.js" />
+    <Content Include="App\components\version\version-directive.js" />
+    <Content Include="App\components\version\version-directive_test.js" />
+    <Content Include="App\components\version\version.js" />
+    <Content Include="App\components\version\version_test.js" />
+    <Content Include="App\view1\view1.html" />
+    <Content Include="App\view1\view1.js" />
+    <Content Include="App\view2\view2.html" />
+    <Content Include="App\view2\view2.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\mocha.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -216,6 +235,8 @@
     <Content Include="Scripts\angular-scenario.js" />
     <Content Include="Scripts\angular-touch.js" />
     <Content Include="Scripts\angular-touch.min.js" />
+    <Content Include="Scripts\angular-ui-router.js" />
+    <Content Include="Scripts\angular-ui-router.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -975,6 +996,15 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\specs\application\calculator.js" />
+    <Content Include="Scripts\specs\bdd\chai-jquery.js" />
+    <Content Include="Scripts\specs\bdd\chai.js" />
+    <Content Include="Scripts\specs\bdd\fixtures.js" />
+    <Content Include="Scripts\specs\bdd\mocha.js" />
+    <Content Include="Scripts\specs\bdd\sinon-chai.js" />
+    <Content Include="Scripts\specs\bdd\sinon.js" />
+    <Content Include="Scripts\specs\fixtures\readme.txt" />
+    <Content Include="Scripts\uri.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -994,6 +1024,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Secured\Index.cshtml" />
+    <Content Include="Views\Mocha\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

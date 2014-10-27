@@ -1,0 +1,21 @@
+﻿<h1>Registration</h1>
+
+<span id="googleSignIn">
+    <span id="signInButton">
+        
+    </span>
+</span>
+
+<script>
+// <![CDATA[
+    (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/client:plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+// ]]></script>
+
+<button ng-click="login()" class="btn btn-success">Login</button>
+<button ng-click="logout()" class="btn btn-danger">Logout</button>
+
+{{ date }}

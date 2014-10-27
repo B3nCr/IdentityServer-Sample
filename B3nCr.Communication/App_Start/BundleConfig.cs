@@ -8,11 +8,32 @@ namespace B3nCr.Communication
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            bundles.Add(new ScriptBundle("~/bundles/angularjs").Include(
+                "~/Scripts/angular.js"
+                , "~/Scripts/angular-route.js"
+                //,"~/Scripts/angular-ui-router.js"
+                ));
+
+            bundles.Add(new ScriptBundle("~/bundles/textapp").Include(
+                "~/App/*.js",
+                "~/App/Auth/*.js",
+                "~/App/components/version/*.js",
+                "~/App/view1/*.js",
+                "~/App/view2/*.js"
+                ));
+
+            bundles.Add(new ScriptBundle("~/bundles/jstest").Include(
+               "~/Scripts/specs/bdd/mocha.js",
+               "~/Scripts/specs/bdd/chai.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
+
+            bundles.Add(new ScriptBundle("~/bundles/urijs").Include(
+                "~/Scripts/uri.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
@@ -29,7 +50,7 @@ namespace B3nCr.Communication
 
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862
-            BundleTable.EnableOptimizations = true;
+            BundleTable.EnableOptimizations = false;
         }
     }
 }
