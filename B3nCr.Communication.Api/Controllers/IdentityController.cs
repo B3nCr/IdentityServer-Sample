@@ -4,13 +4,14 @@ using System.Linq;
 using System.Security.Claims;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace B3nCr.Communication.Api.Controllers
 {
-    [Route("identity")]
-    [Authorize]
     public class IdentityController : ApiController
     {
+        [Authorize]
+        [EnableCors("https://b3ncr.comms:44341", "*", "*")]
         public IHttpActionResult Get()
         {
             var user = User as ClaimsPrincipal;

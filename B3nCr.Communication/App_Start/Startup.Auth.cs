@@ -8,6 +8,7 @@ using Owin;
 using B3nCr.Communication.Models;
 using System.Configuration;
 using Microsoft.Owin.Security.OpenIdConnect;
+using Thinktecture.IdentityServer.v3.AccessTokenValidation;
 
 namespace B3nCr.Communication
 {
@@ -20,10 +21,10 @@ namespace B3nCr.Communication
             const string RedirectUriKey = "IdentityRedirectUrl";
             const string ClientId = "grptxt";
 
-          app.UseCookieAuthentication(new CookieAuthenticationOptions
+            app.UseIdentityServerJwt(new JwtTokenValidationOptions
             {
-                AuthenticationType = "Cookies"
-            });
+                Authority = "https://b3ncr.auth:44340/identity"
+            }); 
 
             var identityServerUri = ConfigurationManager.AppSettings[IdentityServerUrlKey];
             var redirectUri = ConfigurationManager.AppSettings[RedirectUriKey];

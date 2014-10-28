@@ -22,7 +22,7 @@ namespace B3nCr.Identity
                     Factory = InMemoryFactory.Create(
                         users: Users.Get(),
                         clients: Clients.Get(),
-                        scopes: Scope.StandardScopes)
+                        scopes: Scopes.Get())
                 });
             });
         }
@@ -33,7 +33,7 @@ namespace B3nCr.Identity
             
             store.Open(OpenFlags.ReadOnly);
 
-            var certCollection = store.Certificates.Find(X509FindType.FindByThumbprint, "D0AFE6C9CF53CFFA5EEDE83A310EA06B31954015", false);
+            var certCollection = store.Certificates.Find(X509FindType.FindByThumbprint, "9D220430929C556EC3A606E86BA27259E8F7E0EE", false);
 
             return new X509Certificate2(certCollection[0]);
         }

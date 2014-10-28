@@ -22,6 +22,14 @@ namespace B3nCr.Identity
                     new Uri("https://b3ncr.comms:44341/")
                 }
             };
+            var apiClient = new Client
+            {
+                Enabled = true,
+                ClientName = "API Client",
+                ClientId = "mvc_service",
+                ClientSecret = "secret",
+                Flow = Flows.ClientCredentials
+            };
             var angularClient = new Client
             {
                 Enabled = true,
@@ -30,7 +38,17 @@ namespace B3nCr.Identity
                 Flow = Flows.Hybrid,
                 RedirectUris = new List<Uri> {  new Uri("https://b3ncr.comms:44341/#/loggedin?")}
             };
-            return new List<Client> { mvcClient, angularClient };
+            var implicitClient = new Client
+            {
+                Enabled = true,
+                ClientName = "Implicit Client",
+                ClientId = "Implicit",
+                ClientSecret = "ABC123",
+                Flow = Flows.Implicit,
+                RedirectUris = new List<Uri> { new Uri("https://b3ncr.comms:44341/#/loggedin?") },
+                RequireConsent = true,
+            };
+            return new List<Client> { mvcClient, angularClient, implicitClient, apiClient };
         }
     }
 }

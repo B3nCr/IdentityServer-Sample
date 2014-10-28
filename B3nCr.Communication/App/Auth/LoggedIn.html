@@ -1,1 +1,8 @@
 ﻿<h1>Logged In</h1>
+
+<button class="btn btn-default" ng-click="callApi()">Call CORS API</button>
+<button class="btn btn-default" ng-click="localGet()">Call Local API</button>
+
+<div ng-repeat="claim in claims">
+    <h3>{{claim}}</h3>
+</div>
