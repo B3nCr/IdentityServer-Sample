@@ -9,27 +9,23 @@ namespace B3nCr.Communication
 {
     public static class WebApiConfig
     {
-        public static void Register(HttpConfiguration config)
+        public static HttpConfiguration Register()
         {
-            
-            //config.SuppressDefaultHostAuthentication();
-            //config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
+            // Web API configuration and services
+            var config = new HttpConfiguration();
 
-            //// Web API routes
+            config.SuppressDefaultHostAuthentication();
+
+            // Web API routes
             //config.MapHttpAttributeRoutes();
-
-            //config.Routes.MapHttpRoute(
-            //    name: "DefaultApi",
-            //    routeTemplate: "api/{controller}/{id}",
-            //    defaults: new { id = RouteParameter.Optional };
-
-            config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
+                routeTemplate: "{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            return config;
         }
     }
 }

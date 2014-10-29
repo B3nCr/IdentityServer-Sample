@@ -7,7 +7,6 @@ namespace B3nCr.Communication.Controllers
     public class DataController : ApiController
     {
         [Authorize]
-        [Route("data")]
         public IHttpActionResult Get()
         {
             var user = User as ClaimsPrincipal;

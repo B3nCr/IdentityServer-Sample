@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "B3nCr.Identity", "B3nCr.Ide
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{5D30BE66-BD24-4097-BAC7-2F5696475C74}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication2", "WebApplication2\WebApplication2.csproj", "{D1D6A1A0-6C1D-43BC-8488-D2091E1BD436}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{5D30BE66-BD24-4097-BAC7-2F5696475C74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D30BE66-BD24-4097-BAC7-2F5696475C74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D30BE66-BD24-4097-BAC7-2F5696475C74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1D6A1A0-6C1D-43BC-8488-D2091E1BD436}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1D6A1A0-6C1D-43BC-8488-D2091E1BD436}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1D6A1A0-6C1D-43BC-8488-D2091E1BD436}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1D6A1A0-6C1D-43BC-8488-D2091E1BD436}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

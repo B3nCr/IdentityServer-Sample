@@ -17,7 +17,7 @@ angular.module('myApp.auth')
 
     $scope.localGet = function () {
         $scope.claims = [];
-        $http.get('/data')
+        $http.get('api/data')
             .success(function (data) {
                 $scope.claims = data;
             })
