@@ -27,7 +27,8 @@ namespace B3nCr.Identity
                 Enabled = true,
                 Name = "sampleApi",
                 Description = "Access to a sample API",
-                Type = ScopeType.Resource
+                Type = ScopeType.Resource,
+                
             }
         };
 

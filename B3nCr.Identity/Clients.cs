@@ -46,6 +46,7 @@ namespace B3nCr.Identity
                 ClientSecret = "ABC123",
                 Flow = Flows.Implicit,
                 RedirectUris = new List<Uri> { new Uri("https://b3ncr.comms:44341/#/loggedin?") },
+                RequireConsent = true
             };
             return new List<Client> { mvcClient, implicitClient, apiClient };
         }

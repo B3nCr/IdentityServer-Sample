@@ -43,18 +43,17 @@ namespace B3nCr.Communication
 
             app.Map("/api", inner =>
             {
-
                 // Web API configuration and services
                 var config = new HttpConfiguration();
 
-                config.SuppressDefaultHostAuthentication();
+                //config.SuppressDefaultHostAuthentication();
 
-                config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
+                //config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
 
                 inner.UseIdentityServerJwt(new JwtTokenValidationOptions
                 {
                     Authority = "https://b3ncr.auth:44340/identity"
-                
+
                 });
                 inner.RequireScopes(new ScopeValidationOptions() { Scopes = new[] { "sampleApi" } });
 
