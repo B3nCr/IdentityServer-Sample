@@ -7,8 +7,8 @@ angular.module('myApp.auth')
 
     $scope.login = function () {
         var uri = URI('https://b3ncr.auth:44340/identity/connect/authorize')
-            .addSearch('response_type', 'id_token token')
-            .addSearch('client_id', 'Implicit')
+            .addSearch('response_type', 'code id_token token')
+            .addSearch('client_id', 'grptxt')
             .addSearch('scope', 'openid profile sampleApi')
             .addSearch('redirect_uri', 'https://b3ncr.comms:44341/#/loggedin?')
             .addSearch('nonce',  Math.floor( Math.random()*99999 ));

@@ -16,10 +16,10 @@ namespace B3nCr.Identity
                 ClientName = "GrpTxt",
                 ClientId = "grptxt",
                 Flow = Flows.Hybrid,
-
                 RedirectUris = new List<Uri>
                 {
-                    new Uri("https://b3ncr.comms:44341/")
+                    new Uri("https://b3ncr.comms:44341/"),
+                    new Uri("https://b3ncr.comms:44341/#/loggedin?")
                 }
             };
             var apiClient = new Client
@@ -36,7 +36,7 @@ namespace B3nCr.Identity
                 ClientName = "txtm8",
                 ClientId = "txtm8",
                 Flow = Flows.Hybrid,
-                RedirectUris = new List<Uri> {  new Uri("https://b3ncr.comms:44341/#/loggedin?")}
+                RedirectUris = new List<Uri> { new Uri("https://b3ncr.comms:44341/#/loggedin?") }
             };
             var implicitClient = new Client
             {
@@ -45,7 +45,10 @@ namespace B3nCr.Identity
                 ClientId = "Implicit",
                 ClientSecret = "ABC123",
                 Flow = Flows.Implicit,
-                RedirectUris = new List<Uri> { new Uri("https://b3ncr.comms:44341/#/loggedin?") },
+                RedirectUris = new List<Uri> 
+                {
+                    new Uri("https://b3ncr.comms:44341/#/loggedin?") 
+                },
                 RequireConsent = true
             };
             return new List<Client> { mvcClient, implicitClient, apiClient };

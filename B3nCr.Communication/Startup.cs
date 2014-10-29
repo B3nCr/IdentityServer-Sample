@@ -1,13 +1,13 @@
-﻿using Microsoft.AspNet.Identity;
-using Microsoft.Owin;
+﻿using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using Microsoft.Owin.Security.OpenIdConnect;
 using Owin;
-using System;
 using System.Configuration;
+using System.IdentityModel.Tokens;
 using System.Web.Http;
 using Thinktecture.IdentityModel.Owin.ScopeValidation;
+using Thinktecture.IdentityModel.Tokens;
 using Thinktecture.IdentityServer.v3.AccessTokenValidation;
 
 [assembly: OwinStartupAttribute(typeof(B3nCr.Communication.Startup))]
@@ -46,16 +46,31 @@ namespace B3nCr.Communication
                 // Web API configuration and services
                 var config = new HttpConfiguration();
 
-                //config.SuppressDefaultHostAuthentication();
-
-                //config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
+                JwtSecurityTokenHandler.InboundClaimTypeMap = ClaimMappings.None;
 
                 inner.UseIdentityServerJwt(new JwtTokenValidationOptions
                 {
                     Authority = "https://b3ncr.auth:44340/identity"
 
                 });
-                inner.RequireScopes(new ScopeValidationOptions() { Scopes = new[] { "sampleApi" } });
+
+                // for reference tokens
+                inner.UseIdentityServerReferenceToken(new ReferenceTokenValidationOptions
+                {
+                    Authority = "https://b3ncr.auth:44340/identity"
+                });
+
+                // require read OR write scope
+                inner.RequireScopes(new ScopeValidationOptions
+                {
+                    AllowAnonymousAccess = true,
+                    Scopes = new[] { "sampleApi" }
+                });
+
+
+                //config.SuppressDefaultHostAuthentication();
+
+                config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
 
                 // Web API routes
                 //config.MapHttpAttributeRoutes();
