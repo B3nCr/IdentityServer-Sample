@@ -207,7 +207,6 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\MochaController.cs" />
     <Compile Include="Controllers\SecuredController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -223,16 +222,6 @@
     <Content Include="App\Auth\Register.html" />
     <Content Include="App\Auth\LoginController.js" />
     <Content Include="App\Auth\RegistrationController.js" />
-    <Content Include="App\components\version\interpolate-filter.js" />
-    <Content Include="App\components\version\interpolate-filter_test.js" />
-    <Content Include="App\components\version\version-directive.js" />
-    <Content Include="App\components\version\version-directive_test.js" />
-    <Content Include="App\components\version\version.js" />
-    <Content Include="App\components\version\version_test.js" />
-    <Content Include="App\view1\view1.html" />
-    <Content Include="App\view1\view1.js" />
-    <Content Include="App\view2\view2.html" />
-    <Content Include="App\view2\view2.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -1045,7 +1034,6 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Secured\Index.cshtml" />
-    <Content Include="Views\Mocha\Index.cshtml" />
     <Content Include="Scripts\version.json" />
   </ItemGroup>
   <ItemGroup>
