@@ -16,10 +16,7 @@ namespace B3nCr.Communication
 
             bundles.Add(new ScriptBundle("~/bundles/textapp").Include(
                 "~/App/*.js",
-                "~/App/Auth/*.js",
-                "~/App/components/version/*.js",
-                "~/App/view1/*.js",
-                "~/App/view2/*.js"
+                "~/App/Auth/*.js"
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/jstest").Include(
